@@ -17,21 +17,23 @@ namespace ChallengeQA.Features
     
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Reqnroll", "2.0.0.0")]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class CadastroFeature : object, Xunit.IClassFixture<CadastroFeature.FixtureData>, Xunit.IAsyncLifetime
+    [Xunit.TraitAttribute("Category", "pos-graduacao")]
+    public partial class CadastroPosFeature : object, Xunit.IClassFixture<CadastroPosFeature.FixtureData>, Xunit.IAsyncLifetime
     {
         
         private global::Reqnroll.ITestRunner testRunner;
         
-        private static string[] featureTags = ((string[])(null));
+        private static string[] featureTags = new string[] {
+                "pos-graduacao"};
         
-        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new global::System.Globalization.CultureInfo("en-US"), "Features", "Cadastro", null, global::Reqnroll.ProgrammingLanguage.CSharp, featureTags);
+        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new global::System.Globalization.CultureInfo("en-US"), "Features", "CadastroPos", null, global::Reqnroll.ProgrammingLanguage.CSharp, featureTags);
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
-#line 1 "CadastroAlunoGraduacao.feature"
+#line 1 "CadastroAlunoPos.feature"
 #line hidden
         
-        public CadastroFeature(CadastroFeature.FixtureData fixtureData, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public CadastroPosFeature(CadastroPosFeature.FixtureData fixtureData, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
         }
@@ -127,11 +129,11 @@ namespace ChallengeQA.Features
             await this.TestTearDownAsync();
         }
         
-        [Xunit.SkippableTheoryAttribute(DisplayName="Realizar cadastro com dados validos")]
-        [Xunit.TraitAttribute("FeatureTitle", "Cadastro")]
-        [Xunit.TraitAttribute("Description", "Realizar cadastro com dados validos")]
-        [Xunit.InlineDataAttribute("Graduação", "Direito", "51291573038", "JOSE", "SILVA", "14122020", "teste@teste.com", "11991111134", "06020194", "AV MANUEL PEDRO", "CONTINENTAL", "OSASCO", "SAO PAULO", "BRASIL", new string[0])]
-        public async global::System.Threading.Tasks.Task RealizarCadastroComDadosValidos(string nivel, string graduation_Combo, string cpf_Input, string name_Input, string surname_Input, string birthdate_Input, string email_Input, string cellphone_Input, string cep_Input, string address_Input, string neighborhood_Input, string city_Input, string state_Input, string country_Input, string[] exampleTags)
+        [Xunit.SkippableTheoryAttribute(DisplayName="Realizar cadastro de aluno de pos graduação com dados validos")]
+        [Xunit.TraitAttribute("FeatureTitle", "CadastroPos")]
+        [Xunit.TraitAttribute("Description", "Realizar cadastro de aluno de pos graduação com dados validos")]
+        [Xunit.InlineDataAttribute("Pós-graduação", "Mestrado em Inteligência Artificial", "51291573038", "JOSE", "SILVA", "14122020", "teste@teste.com", "11991111134", "06020194", "AV MANUEL PEDRO", "CONTINENTAL", "OSASCO", "SAO PAULO", "BRASIL", new string[0])]
+        public async global::System.Threading.Tasks.Task RealizarCadastroDeAlunoDePosGraduacaoComDadosValidos(string nivel, string graduation_Combo, string cpf_Input, string name_Input, string surname_Input, string birthdate_Input, string email_Input, string cellphone_Input, string cep_Input, string address_Input, string neighborhood_Input, string city_Input, string state_Input, string country_Input, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
@@ -149,8 +151,8 @@ namespace ChallengeQA.Features
             argumentsOfScenario.Add("city-input", city_Input);
             argumentsOfScenario.Add("state-input", state_Input);
             argumentsOfScenario.Add("country-input", country_Input);
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Realizar cadastro com dados validos", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 10
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Realizar cadastro de aluno de pos graduação com dados validos", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 11
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -160,62 +162,62 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 12
-await testRunner.GivenAsync("que o usuario esta no Portal de inscricoes", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
-#line hidden
 #line 13
-await testRunner.WhenAsync(string.Format("ele seleciona o nivel de ensino \"{0}\"", nivel), ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+await testRunner.GivenAsync("que o aluno de pos-graduacao esta no Portal de inscricoes", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 14
-await testRunner.AndAsync(string.Format("seleciona um curso \"{0}\"", graduation_Combo), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+await testRunner.WhenAsync(string.Format("ele seleciona o tipo de ensino \"{0}\"", nivel), ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 15
-await testRunner.AndAsync("clica no botão \"Avançar\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+await testRunner.AndAsync(string.Format("seleciona o curso \"{0}\"", graduation_Combo), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 16
-await testRunner.AndAsync("na tela de Dados pessoais preenche os campos obrigatorios", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+await testRunner.AndAsync("ele clica no botão \"Avançar\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 17
-await testRunner.AndAsync(string.Format("preenche o campo CPF \"{0}\"", cpf_Input), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+await testRunner.AndAsync("na tela de Dados pessoais ele preenche os campos obrigatorios", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 18
-await testRunner.AndAsync(string.Format("preenche o campo Nome \"{0}\"", name_Input), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+await testRunner.AndAsync(string.Format("preenche o CPF \"{0}\"", cpf_Input), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 19
-await testRunner.AndAsync(string.Format("preenche o campo Sobrenome \"{0}\"", surname_Input), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+await testRunner.AndAsync(string.Format("preenche o Nome \"{0}\"", name_Input), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 21
-await testRunner.AndAsync(string.Format("preenche o campo Data de nascimento \"{0}\"", birthdate_Input), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line 20
+await testRunner.AndAsync(string.Format("preenche o Sobrenome \"{0}\"", surname_Input), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 24
-await testRunner.AndAsync(string.Format("em Contato preenche o campo Email \"{0}\"", email_Input), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line 22
+await testRunner.AndAsync(string.Format("preenche a Data de nascimento \"{0}\"", birthdate_Input), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 25
-await testRunner.AndAsync(string.Format("preenche o campo Celular \"{0}\"", cellphone_Input), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+await testRunner.AndAsync(string.Format("preenche o Email \"{0}\"", email_Input), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 27
-await testRunner.AndAsync(string.Format("preenche o campo CEP \"{0}\"", cep_Input), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line 26
+await testRunner.AndAsync(string.Format("preenche o Celular \"{0}\"", cellphone_Input), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 28
-await testRunner.AndAsync(string.Format("preenche o campo Endereco \"{0}\"", address_Input), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+await testRunner.AndAsync(string.Format("preenche o CEP \"{0}\"", cep_Input), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 30
-await testRunner.AndAsync(string.Format("preenche o campo Bairro \"{0}\"", neighborhood_Input), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line 29
+await testRunner.AndAsync(string.Format("preenche o Endereco \"{0}\"", address_Input), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 31
-await testRunner.AndAsync(string.Format("preenche o campo Cidade \"{0}\"", city_Input), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+await testRunner.AndAsync(string.Format("preenche o Bairro \"{0}\"", neighborhood_Input), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 32
-await testRunner.AndAsync(string.Format("preenche o campo Estado \"{0}\"", state_Input), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+await testRunner.AndAsync(string.Format("preenche a Cidade \"{0}\"", city_Input), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 33
-await testRunner.AndAsync(string.Format("preenche o campo Pais \"{0}\"", country_Input), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+await testRunner.AndAsync(string.Format("preenche o Estado \"{0}\"", state_Input), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 34
-await testRunner.AndAsync("clica em \"Avançar\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+await testRunner.AndAsync(string.Format("preenche o Pais \"{0}\"", country_Input), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 37
-await testRunner.ThenAsync("aluno e cadastrado com sucesso", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 35
+await testRunner.AndAsync("clica no botao \"Avançar\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 38
+await testRunner.ThenAsync("aluno de pos-graduacao cadastrado com sucesso", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -228,12 +230,12 @@ await testRunner.ThenAsync("aluno e cadastrado com sucesso", ((string)(null)), (
             
             async global::System.Threading.Tasks.Task Xunit.IAsyncLifetime.InitializeAsync()
             {
-                await CadastroFeature.FeatureSetupAsync();
+                await CadastroPosFeature.FeatureSetupAsync();
             }
             
             async global::System.Threading.Tasks.Task Xunit.IAsyncLifetime.DisposeAsync()
             {
-                await CadastroFeature.FeatureTearDownAsync();
+                await CadastroPosFeature.FeatureTearDownAsync();
             }
         }
     }

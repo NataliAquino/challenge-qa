@@ -32,11 +32,10 @@ And preenche o campo Cidade "<city-input>"
 And preenche o campo Estado "<state-input>"
 And preenche o campo Pais "<country-input>"
 And clica em "Avançar"
-# Then aluno e cadastrado com sucesso na plataforma 
-# document.querySelector("#app > main > section > div > div.flex.flex-col.gap-y-1\\.5.p-6")
+# Then aluno e cadastrado com sucesso na plataforma
 # And clica em "Acessar" area do candidato
 Then aluno e cadastrado com sucesso 
-#document.querySelector("#app > main > form > div > div.flex.flex-col.gap-y-1\\.5.p-6 > h3")
+
 
 Examples:
 
