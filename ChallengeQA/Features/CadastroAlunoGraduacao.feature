@@ -3,6 +3,7 @@
 # Versão: 1.0
 # Data: 02/05/2025
 
+@graduacao
 Feature: Cadastro
 
 Rule: Selecionar um nível de ensino > selecionar um curso > preencher os campos obrigatórios
